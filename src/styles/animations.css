@@ -1,0 +1,71 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateHexagon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatHexagon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scaleHexagon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-rotate {
+  animation: rotateHexagon 25s linear infinite;
+}
+
+.animate-float {
+  animation: floatHexagon 3s ease-in-out infinite;
+}
+
+.animate-scale {
+  animation: scaleHexagon 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-rotate,
+  .animate-float,
+  .animate-scale {
+    animation: none;
+  }
+}
+
+.hexagon-container {
+  perspective: 1000px;
+}
+
+.hexagon {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+}
